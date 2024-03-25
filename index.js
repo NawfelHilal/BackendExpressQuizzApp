@@ -39,8 +39,7 @@ v1Router.post("/user/login", async (req, res) => {
 });
 
 v1Router.post("/user/signup", async (req, res) => {
-  const { id, password, username, nom, prenom, dateNaissance, telephone } =
-    req.body;
+  const { id, password, username } = req.body;
   const existingUser = await prisma.user.findUnique({
     where: {
       username: username,
