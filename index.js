@@ -123,6 +123,27 @@ v1Router.get("/api/categories", async (req, res) => {
   }
 });
 
+// Route pour enregistrer le score dans la base de données
+v1Router.post("/save-score", async (req, res) => {
+  try {
+    const { userId, categoryId, score } = req.body;
+
+    // Enregistrement du score dans la base de données
+    const quizResult = await prisma.quizResult.create({
+      data: {
+        userId: parseInt(userId),
+        categoryId: parseInt(categoryId),
+        score: parseInt(score),
+      },
+    });
+
+    res.status(200).json({ message: "Score saved successfully", quizResult });
+  } catch (error) {
+    console.error("Error saving score:", error);
+    res.status(500).json({ error: "Error saving score" });
+  }
+});
+
 app.use("/v1", v1Router);
 
 app.listen(8000, "0.0.0.0", () =>
