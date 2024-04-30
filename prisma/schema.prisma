@@ -18,3 +18,26 @@ model User {
   username String  @unique
   password String
 }
+
+model Category {
+  id       Int    @id @default(autoincrement())// Id de la catégorie
+  name     String    
+  couleur  String    
+  questions Question[] 
+}
+
+model Question {
+  id            Int       @id @default(autoincrement()) 
+  category      Category  @relation(fields: [categoryId], references: [id]) 
+  categoryId    Int   
+  question      String    
+  trueReponse   String    
+  responses     Response[] 
+}
+
+model Response {
+  id         Int       @id @default(autoincrement()) 
+  question   Question  @relation(fields: [questionId], references: [id]) 
+  questionId Int       
+  text       String   
+}
