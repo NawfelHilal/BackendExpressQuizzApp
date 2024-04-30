@@ -77,7 +77,7 @@ v1Router.post("/import-data", async (req, res) => {
             create: categoryData.questions.map((question) => ({
               question: question.question,
               trueReponse: question.trueReponse,
-              responses: {
+              reponses: {
                 create: question.reponses.map((response) => ({
                   text: response,
                 })),
@@ -88,7 +88,7 @@ v1Router.post("/import-data", async (req, res) => {
         include: {
           questions: {
             include: {
-              responses: true,
+              reponses: true,
             },
           },
         },
@@ -105,13 +105,13 @@ v1Router.post("/import-data", async (req, res) => {
   }
 });
 
-app.get("/api/categories", async (req, res) => {
+v1Router.get("/api/categories", async (req, res) => {
   try {
     const categories = await prisma.category.findMany({
       include: {
         questions: {
           include: {
-            responses: true,
+            reponses: true,
           },
         },
       },

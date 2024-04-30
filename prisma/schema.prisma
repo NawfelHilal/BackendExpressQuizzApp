@@ -32,10 +32,10 @@ model Question {
   categoryId    Int   
   question      String    
   trueReponse   String    
-  responses     Response[] 
+  reponses     Reponse[] 
 }
 
-model Response {
+model Reponse {
   id         Int       @id @default(autoincrement()) 
   question   Question  @relation(fields: [questionId], references: [id]) 
   questionId Int       
