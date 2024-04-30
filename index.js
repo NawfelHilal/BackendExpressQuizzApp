@@ -4,6 +4,7 @@ const { Application } = express;
 import cors from "cors";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import fs from "fs";
 const app = express();
 const port = 8000;
 const prisma = new PrismaClient();
@@ -57,6 +58,50 @@ v1Router.post("/user/signup", async (req, res) => {
       },
     });
     res.status(201).json({ message: "User created", user: user });
+  }
+});
+
+// Route pour importer les données depuis le json du front
+v1Router.post("/import-data", async (req, res) => {
+  try {
+    const jsonData = JSON.parse(fs.readFileSync("data.json", "utf-8")); // Charger les données depuis le fichier JSON
+
+    // Parcourir les données et les insérer dans la base de données
+    for (const categoryData of jsonData) {
+      const category = await prisma.category.create({
+        data: {
+          id: categoryData.id,
+          name: categoryData.name,
+          couleur: categoryData.couleur,
+          questions: {
+            create: categoryData.questions.map((question) => ({
+              question: question.question,
+              trueReponse: question.trueReponse,
+              responses: {
+                create: question.reponses.map((response) => ({
+                  text: response,
+                })),
+              },
+            })),
+          },
+        },
+        include: {
+          questions: {
+            include: {
+              responses: true,
+            },
+          },
+        },
+      });
+      console.log(
+        `Category "${category.name}" inserted with ${category.questions.length} questions`
+      );
+    }
+
+    res.status(201).send("Data imported successfully");
+  } catch (error) {
+    console.error("Error importing data:", error);
+    res.status(500).send("Error importing data");
   }
 });
 
