@@ -1,0 +1,398 @@
+[
+    {
+      "name": "Javascript",
+      "couleur": "#3498db",
+      "questions": [
+        {
+          "question": "Quelle méthode est utilisée pour ajouter un nouvel élément à la fin d'un tableau en JavaScript ?",
+          "reponses": ["push()", "add()", "append()", "insert()"],
+          "trueReponse": "push()"
+        },
+        {
+          "question": "Quelle est la méthode JavaScript utilisée pour supprimer le dernier élément d'un tableau ?",
+          "reponses": ["pop()", "remove()", "delete()", "splice()"],
+          "trueReponse": "pop()"
+        },
+        {
+          "question": "Quelle est la méthode JavaScript utilisée pour trier les éléments d'un tableau ?",
+          "reponses": ["sort()", "order()", "arrange()", "group()"],
+          "trueReponse": "sort()"
+        },
+        {
+          "question": "Quelle est la signification de l'acronyme DOM en JavaScript ?",
+          "reponses": ["Document Object Model", "Data Output Mechanism", "Digital Object Memory", "Dynamic Output Machine"],
+          "trueReponse": "Document Object Model"
+        },
+        {
+          "question": "Quelle fonction est utilisée pour convertir une chaîne de caractères en minuscules en JavaScript ?",
+          "reponses": ["toLowerCase()", "toLower()", "convertToLower()", "lowerCase()"],
+          "trueReponse": "toLowerCase()"
+        },
+        {
+          "question": "Quelle méthode est utilisée pour inverser l'ordre des éléments d'un tableau en JavaScript ?",
+          "reponses": ["reverse()", "flip()", "invert()", "sortDescending()"],
+          "trueReponse": "reverse()"
+        },
+        {
+          "question": "Quelle méthode est utilisée pour ajouter un nouvel élément au début d'un tableau en JavaScript ?",
+          "reponses": ["push()", "unshift()", "append()", "insert()"],
+          "trueReponse": "unshift()"
+        },
+        {
+          "question": "Quelle est la méthode JavaScript utilisée pour supprimer le premier élément d'un tableau ?",
+          "reponses": ["shift()", "remove()", "delete()", "splice()"],
+          "trueReponse": "shift()"
+        },
+        {
+          "question": "Quelle est la méthode JavaScript utilisée pour concaténer deux tableaux ?",
+          "reponses": ["concat()", "join()", "merge()", "combine()"],
+          "trueReponse": "concat()"
+        },
+        {
+          "question": "Quelle fonction est utilisée pour convertir une chaîne de caractères en majuscules en JavaScript ?",
+          "reponses": ["toUpperCase()", "toUpper()", "convertToUpper()", "upperCase()"],
+          "trueReponse": "toUpperCase()"
+        }
+       
+      ]
+    },
+    {
+      "name": "C",
+      "couleur": "#f7f7f7",
+      "questions": [
+        {
+          "question": "Qu'est-ce que C signifie dans le langage de programmation ?",
+          "reponses": ["Coding", "Correct", "Computer", "Compiler"],
+          "trueReponse": "Coding"
+        },
+        {
+          "question": "Quel est le mot clé utilisé pour déclarer une variable en C ?",
+          "reponses": ["int", "var", "let", "const"],
+          "trueReponse": "int"
+        },
+        {
+          "question": "Quelle est la structure de contrôle utilisée pour exécuter des instructions répétitives en C ?",
+          "reponses": ["for", "while", "if", "switch"],
+          "trueReponse": "for"
+        },
+        {
+          "question": "Quel est le symbole utilisé pour accéder à la valeur d'une variable en C ?",
+          "reponses": ["&", "*", "#", "$"],
+          "trueReponse": "*"
+        },
+        {
+          "question": "Quelle est la syntaxe correcte pour déclarer un pointeur en langage C ?",
+          "reponses": ["int *ptr;", "ptr int;", "pointeur ptr;", "var ptr;"],
+          "trueReponse": "int *ptr;"
+        },
+        {
+          "question": "Quelle est la fonction utilisée pour lire une chaîne de caractères depuis l'entrée standard en langage C ?",
+          "reponses": ["scanf()", "readString()", "input()", "getInput()"],
+          "trueReponse": "scanf()"
+        },
+        {
+          "question": "Quelle est la sortie de l'expression 5 % 2 en langage C ?",
+          "reponses": ["1", "2", "3", "0"],
+          "trueReponse": "1"
+        },
+        {
+          "question": "Quelle est la taille d'un int en langage C sur une plateforme 32 bits ?",
+          "reponses": ["2 octets", "4 octets", "8 octets", "16 octets"],
+          "trueReponse": "4 octets"
+        },
+        {
+          "question": "Qu'est-ce que l'opérateur d'incrémentation ++ fait en C ?",
+          "reponses": ["Il augmente la valeur de la variable de 1", "Il diminue la valeur de la variable de 1", "Il multiplie la valeur de la variable par 2", "Il divise la valeur de la variable par 2"],
+          "trueReponse": "Il augmente la valeur de la variable de 1"
+        },
+        {
+          "question": "Quelle est la fonction utilisée pour afficher du texte à l'écran en langage C ?",
+          "reponses": ["printf()", "print()", "display()", "show()"],
+          "trueReponse": "printf()"
+        }
+        
+      ]
+    },
+    {
+      "name": "Python",
+      "couleur": "#e74c3c",
+      "questions": [
+        {
+          "question": "Quel est le mot clé utilisé pour définir une fonction en Python ?",
+          "reponses": ["def", "function", "define", "method"],
+          "trueReponse": "def"
+        },
+        {
+          "question": "Quelle est la fonction utilisée pour obtenir la longueur d'une chaîne de caractères en Python ?",
+          "reponses": ["len()", "length()", "size()", "count()"],
+          "trueReponse": "len()"
+        },
+        {
+          "question": "Quel est le résultat de l'expression '2 + 2' en Python ?",
+          "reponses": ["4", "22", "5", "6"],
+          "trueReponse": "4"
+        },
+        {
+          "question": "Quelle est la méthode utilisée pour ouvrir un fichier en Python ?",
+          "reponses": ["open()", "read()", "write()", "load()"],
+          "trueReponse": "open()"
+        },
+        {
+          "question": "Quelle est la syntaxe correcte pour commenter une ligne en Python ?",
+          "reponses": ["//", "#", "/* */", "<!-- -->"],
+          "trueReponse": "#"
+        },
+        {
+          "question": "Quelle est la sortie de l'expression 3 ** 2 en Python ?",
+          "reponses": ["9", "6", "5", "27"],
+          "trueReponse": "9"
+        },
+        {
+          "question": "Quelle est la fonction utilisée pour inverser l'ordre d'une liste en Python ?",
+          "reponses": ["reverse()", "invert()", "flip()", "backward()"],
+          "trueReponse": "reverse()"
+        },
+        {
+          "question": "Quel opérateur est utilisé pour la concaténation de chaînes de caractères en Python ?",
+          "reponses": ["+", "-", "*", "/"],
+          "trueReponse": "+"
+        },
+        {
+          "question": "Quelle est la méthode utilisée pour convertir une chaîne de caractères en majuscules en Python ?",
+          "reponses": ["upper()", "toUpper()", "toUpperCase()", "capitalize()"],
+          "trueReponse": "upper()"
+        },
+        {
+          "question": "Quelle est la fonction utilisée pour obtenir la date et l'heure actuelles en Python ?",
+          "reponses": ["datetime.now()", "time.now()", "now()", "get_current_datetime()"],
+          "trueReponse": "datetime.now()"
+        }
+      
+      ]
+    },
+    
+    {
+      "name": "HTML",
+      "couleur": "#e67e22",
+      "questions": [
+        {
+          "question": "Que signifie HTML ?",
+          "reponses": ["Hyper Text Markup Language", "Hyperlinks and Text Markup Language", "Home Tool Markup Language", "Hyper Tool Markup Language"],
+          "trueReponse": "Hyper Text Markup Language"
+        },
+        {
+          "question": "Quel est le balisage utilisé pour définir un lien hypertexte en HTML ?",
+          "reponses": ["<a>", "<link>", "<href>", "<url>"],
+          "trueReponse": "<a>"
+        },
+        {
+          "question": "Quel est l'élément utilisé pour définir le titre d'une page HTML ?",
+          "reponses": ["<title>", "<head>", "<header>", "<h1>"],
+          "trueReponse": "<title>"
+        },
+        {
+          "question": "Quelle est la balise utilisée pour insérer une image dans une page HTML ?",
+          "reponses": ["<img>", "<image>", "<picture>", "<src>"],
+          "trueReponse": "<img>"
+        },
+        {
+          "question": "Quelle balise est utilisée pour définir une liste numérotée en HTML ?",
+          "reponses": ["<ul>", "<li>", "<ol>", "<dl>"],
+          "trueReponse": "<ol>"
+        },
+        {
+          "question": "Quelle balise est utilisée pour définir un paragraphe en HTML ?",
+          "reponses": ["<p>", "<para>", "<pg>", "<par>"],
+          "trueReponse": "<p>"
+        },
+        {
+          "question": "Quelle balise est utilisée pour définir une ligne horizontale en HTML ?",
+          "reponses": ["<hr>", "<line>", "<hline>", "<horizontal>"],
+          "trueReponse": "<hr>"
+        },
+        {
+          "question": "Quelle balise est utilisée pour définir l'en-tête d'un tableau en HTML ?",
+          "reponses": ["<th>", "<td>", "<table-header>", "<tr>"],
+          "trueReponse": "<th>"
+        },
+        {
+          "question": "Quelle balise est utilisée pour définir un lien vers une feuille de style externe en HTML ?",
+          "reponses": ["<link>", "<style>", "<css>", "<external>"],
+          "trueReponse": "<link>"
+        },
+        {
+          "question": "Quel attribut est utilisé pour spécifier l'adresse URL d'une image dans la balise <img> en HTML ?",
+          "reponses": ["src", "href", "url", "link"],
+          "trueReponse": "src"
+        }
+      ]
+    },
+    {
+      "name": "Java",
+      "couleur": "#9b59b6",
+      "questions": [
+        {
+          "question": "Quelle méthode est utilisée pour obtenir la longueur d'une chaîne de caractères en Java ?",
+          "reponses": ["length()", "getSize()", "size()", "count()"],
+          "trueReponse": "length()"
+        },
+        {
+          "question": "Quel mot-clé est utilisé pour déclarer une variable constante en Java ?",
+          "reponses": ["const", "let", "final", "var"],
+          "trueReponse": "final"
+        },
+        {
+          "question": "Quelle est la sortie de l'expression 5 / 2 en Java ?",
+          "reponses": ["2.5", "2", "3", "2.0"],
+          "trueReponse": "2.5"
+        },
+        {
+          "question": "Quelle méthode est utilisée pour obtenir l'index d'un élément dans une liste en Java ?",
+          "reponses": ["getIndex()", "findIndex()", "indexOf()", "search()"],
+          "trueReponse": "indexOf()"
+        },
+        {
+          "question": "Quelle est la classe de base pour toutes les classes en Java ?",
+          "reponses": ["BaseClass", "Object", "Main", "SuperClass"],
+          "trueReponse": "Object"
+        },
+        {
+          "question": "Quel est le résultat de l'expression true && false en Java ?",
+          "reponses": ["true", "false", "null", "NaN"],
+          "trueReponse": "false"
+        },
+        {
+          "question": "Quel est le résultat de l'expression 5 > 3 en Java ?",
+          "reponses": ["true", "false", "null", "NaN"],
+          "trueReponse": "true"
+        },
+        {
+          "question": "Quelle méthode est utilisée pour concaténer deux chaînes en Java ?",
+          "reponses": ["concat()", "join()", "merge()", "append()"],
+          "trueReponse": "concat()"
+        },
+        {
+          "question": "Quel est le mot-clé utilisé pour créer une nouvelle instance d'une classe en Java ?",
+          "reponses": ["new", "create", "instance", "alloc()"],
+          "trueReponse": "new"
+        },
+        {
+          "question": "Quelle méthode est utilisée pour convertir une chaîne en un entier en Java ?",
+          "reponses": ["parseInt()", "convertToInt()", "toInt()", "cast()"],
+          "trueReponse": "parseInt()"
+        }
+      ]
+    },
+    {
+      "name": "PHP",
+      "couleur": "#9b59b6",
+      "questions": [
+        {
+          "question": "Qu'est-ce que PHP signifie ?",
+          "reponses": ["Personal Home Page", "Hypertext Preprocessor", "Private Hosting Platform", "Programming Hyper Processor"],
+          "trueReponse": "Hypertext Preprocessor"
+        },
+        {
+          "question": "Dans quelle section d'une page web est généralement utilisé PHP ?",
+          "reponses": ["Dans la section <head>", "Dans la section <body>", "Dans la section <title>", "Dans la section <header>"],
+          "trueReponse": "Dans la section <body>"
+        },
+        {
+          "question": "Quel est le symbole utilisé pour démarrer un script PHP ?",
+          "reponses": ["%", "#", "!", "<?php", "<?"],
+          "trueReponse": "<?php"
+        },
+        {
+          "question": "Quel langage est principalement utilisé pour interagir avec les bases de données dans PHP ?",
+          "reponses": ["SQL", "HTML", "CSS", "JavaScript"],
+          "trueReponse": "SQL"
+        },
+        {
+          "question": "Quelle fonction est utilisée pour afficher du texte en PHP ?",
+          "reponses": ["echo", "print", "printf", "display"],
+          "trueReponse": "echo"
+        },
+        {
+          "question": "Quelle extension de fichier est généralement utilisée pour les scripts PHP ?",
+          "reponses": [".html", ".php", ".js", ".css"],
+          "trueReponse": ".php"
+        },
+        {
+          "question": "Quelle boucle est utilisée pour parcourir un tableau en PHP ?",
+          "reponses": ["foreach", "while", "for", "do-while"],
+          "trueReponse": "foreach"
+        },
+        {
+          "question": "Quelle fonction est utilisée pour obtenir la longueur d'une chaîne de caractères en PHP ?",
+          "reponses": ["length()", "strlen()", "size()", "charCount()"],
+          "trueReponse": "strlen()"
+        },
+        {
+          "question": "Quelle fonction est utilisée pour inclure le contenu d'un fichier dans un script PHP ?",
+          "reponses": ["include()", "import()", "require()", "use()"],
+          "trueReponse": "include()"
+        },
+        {
+          "question": "Quelle fonction est utilisée pour rediriger un utilisateur vers une autre page en PHP ?",
+          "reponses": ["navigate()", "header()", "redirect()", "forward()"],
+          "trueReponse": "header()"
+        }
+      ]
+    },
+    {
+      "name": "SQL",
+      "couleur": "#2ecc71",
+      "questions": [
+        {
+          "question": "Qu'est-ce que SQL signifie ?",
+          "reponses": ["Structured Language", "Sequential Language", "Structured Query Language", "Simple Query Language"],
+          "trueReponse": "Structured Query Language"
+        },
+        {
+          "question": "Quelle instruction SQL est utilisée pour sélectionner des données dans une base de données ?",
+          "reponses": ["GET", "FETCH", "SELECT", "OPEN"],
+          "trueReponse": "SELECT"
+        },
+        {
+          "question": "Quelle instruction SQL est utilisée pour insérer de nouvelles données dans une base de données ?",
+          "reponses": ["SAVE", "ADD", "INSERT INTO", "CREATE"],
+          "trueReponse": "INSERT INTO"
+        },
+        {
+          "question": "Quelle instruction SQL est utilisée pour mettre à jour des données dans une base de données ?",
+          "reponses": ["RENEW", "UPDATE", "CHANGE", "MODIFY"],
+          "trueReponse": "UPDATE"
+        },
+        {
+          "question": "Quelle instruction SQL est utilisée pour supprimer des données dans une base de données ?",
+          "reponses": ["REMOVE", "DELETE", "ERASE", "DISPOSE"],
+          "trueReponse": "DELETE"
+        },
+        {
+          "question": "Quelle fonction SQL est utilisée pour compter le nombre de lignes dans une table ?",
+          "reponses": ["COUNT()", "SUM()", "TOTAL()", "ROWS()"],
+          "trueReponse": "COUNT()"
+        },
+        {
+          "question": "Quelle fonction SQL est utilisée pour trouver la valeur maximale dans une colonne ?",
+          "reponses": ["MAX()", "TOP()", "HIGHEST()", "PEAK()"],
+          "trueReponse": "MAX()"
+        },
+        {
+          "question": "Quelle fonction SQL est utilisée pour trier les résultats d'une requête ?",
+          "reponses": ["SORT()", "ORDER()", "ARRANGE()", "ORDER BY"],
+          "trueReponse": "ORDER BY"
+        },
+        {
+          "question": "Quelle clause SQL est utilisée pour filtrer les résultats d'une requête ?",
+          "reponses": ["FILTER", "WHERE", "SEARCH", "LIMIT"],
+          "trueReponse": "WHERE"
+        },
+        {
+          "question": "Quelle instruction SQL est utilisée pour créer une nouvelle table dans une base de données ?",
+          "reponses": ["ADD TABLE", "NEW TABLE", "CREATE TABLE", "INSERT TABLE"],
+          "trueReponse": "CREATE TABLE"
+        }
+      ]
+    }
+  ]
