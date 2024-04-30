@@ -105,6 +105,24 @@ v1Router.post("/import-data", async (req, res) => {
   }
 });
 
+app.get("/api/categories", async (req, res) => {
+  try {
+    const categories = await prisma.category.findMany({
+      include: {
+        questions: {
+          include: {
+            responses: true,
+          },
+        },
+      },
+    });
+    res.json(categories);
+  } catch (error) {
+    console.error("Erreur lors de la récupération des catégories :", error);
+    res.status(500).json({ erreur: "Erreur interne du serveur" });
+  }
+});
+
 app.use("/v1", v1Router);
 
 app.listen(8000, "0.0.0.0", () =>
