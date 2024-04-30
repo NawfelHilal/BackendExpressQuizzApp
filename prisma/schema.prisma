@@ -17,6 +17,8 @@ model User {
   id       Int     @id @default(autoincrement())
   username String  @unique
   password String
+  quizResults QuizResult[]
+
 }
 
 model Category {
@@ -24,6 +26,8 @@ model Category {
   name     String    
   couleur  String    
   questions Question[] 
+  quizResults QuizResult[]
+
 }
 
 model Question {
@@ -40,4 +44,15 @@ model Reponse {
   question   Question  @relation(fields: [questionId], references: [id]) 
   questionId Int       
   text       String   
+}
+
+model QuizResult {
+  id      Int      @id @default(autoincrement())
+  userId  Int
+  categoryId  Int
+  score   Int
+  date    DateTime @default(now())
+
+  User    User     @relation(fields: [userId], references: [id])
+  Category    Category     @relation(fields: [categoryId], references: [id])
 }
