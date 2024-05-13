@@ -135,7 +135,6 @@ const authenticateToken = (req, res, next) => {
   });
 };
 
-// Route pour enregistrer le score dans la base de données
 v1Router.post("/save-score", authenticateToken, async (req, res) => {
   try {
     const { categoryId, score } = req.body;
@@ -153,6 +152,44 @@ v1Router.post("/save-score", authenticateToken, async (req, res) => {
   } catch (error) {
     console.error("Error saving score:", error);
     res.status(500).json({ error: "Error saving score" });
+  }
+});
+
+v1Router.get(
+  "/quiz-results/:categoryId",
+  authenticateToken,
+  async (req, res) => {
+    try {
+      const userId = req.user.userId;
+      const categoryId = parseInt(req.params.categoryId);
+
+      const quizResults = await prisma.quizResult.findMany({
+        where: {
+          userId: userId,
+          categoryId: categoryId,
+        },
+      });
+
+      res.status(200).json({ quizResults });
+    } catch (error) {
+      console.error("Error fetching quiz results:", error);
+      res.status(500).json({ error: "Error fetching quiz results" });
+    }
+  }
+);
+
+v1Router.get("/current-user", authenticateToken, async (req, res) => {
+  try {
+    const userId = req.user.userId;
+    const user = await prisma.user.findUnique({
+      where: {
+        id: userId,
+      },
+    });
+    res.json(user);
+  } catch (error) {
+    console.error("Error fetching current user:", error);
+    res.status(500).json({ error: "Error fetching current user" });
   }
 });
 
