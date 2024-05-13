@@ -123,12 +123,24 @@ v1Router.get("/api/categories", async (req, res) => {
   }
 });
 
-// Route pour enregistrer le score dans la base de données
-v1Router.post("/save-score", async (req, res) => {
-  try {
-    const { userId, categoryId, score } = req.body;
+const authenticateToken = (req, res, next) => {
+  const authHeader = req.headers["authorization"];
+  const token = authHeader && authHeader.split(" ")[1];
+  if (token == null) return res.sendStatus(401); // Unauthorized
 
-    // Enregistrement du score dans la base de données
+  jwt.verify(token, JWT_SECRET, (err, user) => {
+    if (err) return res.sendStatus(403); // Forbidden
+    req.user = user;
+    next();
+  });
+};
+
+// Route pour enregistrer le score dans la base de données
+v1Router.post("/save-score", authenticateToken, async (req, res) => {
+  try {
+    const { categoryId, score } = req.body;
+    const userId = req.user.userId; // Récupérer l'ID de l'utilisateur à partir du token JWT
+
     const quizResult = await prisma.quizResult.create({
       data: {
         userId: parseInt(userId),
