@@ -123,6 +123,23 @@ v1Router.get("/api/categories", async (req, res) => {
   }
 });
 
+//Retourne seulement les catégories
+v1Router.get("/api/just-categories", async (req, res) => {
+  try {
+    const categories = await prisma.category.findMany({
+      select: {
+        id: true,
+        name: true,
+        couleur: true,
+      },
+    });
+    res.json(categories);
+  } catch (error) {
+    console.error("Erreur lors de la récupération des catégories :", error);
+    res.status(500).json({ erreur: "Erreur interne du serveur" });
+  }
+});
+
 const authenticateToken = (req, res, next) => {
   const authHeader = req.headers["authorization"];
   const token = authHeader && authHeader.split(" ")[1];
