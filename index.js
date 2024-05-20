@@ -5,6 +5,7 @@ import cors from "cors";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import fs from "fs";
+
 const app = express();
 const port = 8000;
 const prisma = new PrismaClient();
@@ -12,14 +13,14 @@ const JWT_SECRET =
   "b2eb6e36a03b300ccda64da95e75798068a45cd5943a3fa6c8ff2ad48c638cf9c6d71844adff4818402c9bcfca75a056eee2133e8c35d2b94cb345a1ae5ab5cc";
 
 app.use(cors());
-
 app.use(express.json());
 
 const v1Router = express.Router();
 
-app.get("/", (req, res) => {
+//Hateoas
+v1Router.get("/", (req, res) => {
   res.json({
-    message: "Bienvenue dans notre API de Quizz",
+    message: "Bienvenue sur notre API Quizz",
     links: {
       login: { href: "/v1/user/login", method: "POST" },
       signup: { href: "/v1/user/signup", method: "POST" },
@@ -37,10 +38,6 @@ app.get("/", (req, res) => {
   });
 });
 
-/********************************************************************************
-    User
- ********************************************************************************/
-
 v1Router.post("/user/login", async (req, res) => {
   const { username, password } = req.body;
   const user = await prisma.user.findUnique({
@@ -53,7 +50,7 @@ v1Router.post("/user/login", async (req, res) => {
     const token = jwt.sign({ userId: user.id }, JWT_SECRET, {
       expiresIn: "1h",
     });
-    res.status(200).json({ message: "Login successfull", token: token });
+    res.status(200).json({ message: "Login successful", token: token });
   } else {
     res.status(401).json({ message: "Invalid credentials" });
   }
@@ -185,7 +182,18 @@ v1Router.post("/save-score", authenticateToken, async (req, res) => {
       },
     });
 
-    res.status(200).json({ message: "Score saved successfully", quizResult });
+    res.status(200).json({
+      message: "Score saved successfully",
+      quizResult,
+      links: {
+        self: { href: `/v1/save-score`, method: "POST" },
+        getAllQuizResults: { href: "/v1/all-quiz-results", method: "GET" },
+        getQuizResultsByCategory: {
+          href: `/v1/quiz-results/${categoryId}`,
+          method: "GET",
+        },
+      },
+    });
   } catch (error) {
     console.error("Error saving score:", error);
     res.status(500).json({ error: "Error saving score" });
@@ -207,7 +215,13 @@ v1Router.get(
         },
       });
 
-      res.status(200).json({ quizResults });
+      res.status(200).json({
+        quizResults,
+        links: {
+          self: { href: `/v1/quiz-results/${categoryId}`, method: "GET" },
+          getAllQuizResults: { href: "/v1/all-quiz-results", method: "GET" },
+        },
+      });
     } catch (error) {
       console.error("Error fetching quiz results:", error);
       res.status(500).json({ error: "Error fetching quiz results" });
@@ -232,7 +246,16 @@ v1Router.get("/all-quiz-results", authenticateToken, async (req, res) => {
       },
     });
 
-    res.status(200).json({ quizResults });
+    res.status(200).json({
+      quizResults,
+      links: {
+        self: { href: "/v1/all-quiz-results", method: "GET" },
+        getQuizResultsByCategory: {
+          href: `/v1/quiz-results/${categoryId}`,
+          method: "GET",
+        },
+      },
+    });
   } catch (error) {
     console.error("Error fetching quiz results:", error);
     res.status(500).json({ error: "Error fetching quiz results" });
@@ -247,7 +270,13 @@ v1Router.get("/current-user", authenticateToken, async (req, res) => {
         id: userId,
       },
     });
-    res.json(user);
+    res.json({
+      user,
+      links: {
+        self: { href: "/v1/current-user", method: "GET" },
+        getAllQuizResults: { href: "/v1/all-quiz-results", method: "GET" },
+      },
+    });
   } catch (error) {
     console.error("Error fetching current user:", error);
     res.status(500).json({ error: "Error fetching current user" });
