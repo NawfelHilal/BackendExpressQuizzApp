@@ -17,6 +17,26 @@ app.use(express.json());
 
 const v1Router = express.Router();
 
+app.get("/", (req, res) => {
+  res.json({
+    message: "Bienvenue dans notre API de Quizz",
+    links: {
+      login: { href: "/v1/user/login", method: "POST" },
+      signup: { href: "/v1/user/signup", method: "POST" },
+      importData: { href: "/v1/import-data", method: "POST" },
+      getCategories: { href: "/v1/api/categories", method: "GET" },
+      getJustCategories: { href: "/v1/api/just-categories", method: "GET" },
+      saveScore: { href: "/v1/save-score", method: "POST" },
+      getQuizResultsByCategory: {
+        href: "/v1/quiz-results/:categoryId",
+        method: "GET",
+      },
+      getAllQuizResults: { href: "/v1/all-quiz-results", method: "GET" },
+      getCurrentUser: { href: "/v1/current-user", method: "GET" },
+    },
+  });
+});
+
 /********************************************************************************
     User
  ********************************************************************************/
@@ -194,6 +214,30 @@ v1Router.get(
     }
   }
 );
+
+v1Router.get("/all-quiz-results", authenticateToken, async (req, res) => {
+  try {
+    const userId = req.user.userId;
+
+    if (!userId) {
+      return res.status(400).json({ error: "User ID is missing from request" });
+    }
+
+    const quizResults = await prisma.quizResult.findMany({
+      where: {
+        userId: userId,
+      },
+      include: {
+        category: false,
+      },
+    });
+
+    res.status(200).json({ quizResults });
+  } catch (error) {
+    console.error("Error fetching quiz results:", error);
+    res.status(500).json({ error: "Error fetching quiz results" });
+  }
+});
 
 v1Router.get("/current-user", authenticateToken, async (req, res) => {
   try {
